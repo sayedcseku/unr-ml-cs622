@@ -41,9 +41,12 @@ print("KNN:", acc)
 
 X,Y = load_data("data_5.txt")
 mu = np.array([[1],[5]])
-mu = kmeans.K_Means(X,2,mu)
+#mu = kmeans.K_Means(X,2,mu)
+mu = kmeans.K_Means_better(X,K)
 print("KMeans:",mu)
 
 X,Y = load_data("data_6.txt")
-mu = kmeans.K_Means(X,2,[])
+#mu = kmeans.K_Means(X,2,[])
+K=2
+mu = kmeans.K_Means_better(X,K)
 print("KMeans:",mu)
