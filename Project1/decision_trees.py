@@ -19,10 +19,11 @@ def infoGain (data, split_feature, target):
     values,counts= np.unique(data[split_feature],return_counts=True)
     
     #Calculate the weighted entropy, SUM(P(t) * H(t))
-    P_t_H_t = 0
-    for i in ranges(values.size):
-        prob_t = counts[i]/np.sum(counts)
-        P_t_H_t += prob_t * entropy()
+    weightedEntropy = np.sum([(counts[i]/np.sum(counts))*entropy(data.where(data[split_feature]==values[i]).dropna()[target]) for i in range(len(values))]) 
+    
+    infoGain = H_S - weightedEntropy
+    
+    return infoGain
     
 def DT_train_binary(X,Y,max_depth):
     
