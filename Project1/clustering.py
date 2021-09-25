@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 from scipy.spatial import distance
+
 def K_Means(X,K,mu):
     mu_updated = []
     iter = 1

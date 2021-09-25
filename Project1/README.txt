@@ -1,7 +1,3 @@
-
-# Project 1:
-
-
 1. Decision Tree:
 =================
 

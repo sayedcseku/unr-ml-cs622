@@ -1,6 +1,7 @@
 import numpy as np
 from collections import Counter
 
+
 class Node:
     
     def __init__(self, feature=None, threshold=None, left_node=None, right_node=None, gain=None, value=None):

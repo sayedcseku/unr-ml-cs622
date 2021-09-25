@@ -1,5 +1,6 @@
 import numpy as np
 import decision_trees as dt
+#import dt_pra as dt
 import nearest_neighbors as nn
 import clustering as kmeans
 
@@ -38,12 +39,15 @@ print("DT:",test_acc)
 X,Y = load_data("data_4.txt")
 acc = nn.KNN_test(X,Y,X,Y,1)
 print("KNN:", acc)
+print("Best K: ", nn.choose_K(X,Y,X,Y))
 
 X,Y = load_data("data_5.txt")
 mu = np.array([[1],[5]])
 #mu = kmeans.K_Means(X,2,mu)
+K=2
 mu = kmeans.K_Means_better(X,K)
 print("KMeans:",mu)
+
 
 X,Y = load_data("data_6.txt")
 #mu = kmeans.K_Means(X,2,[])
