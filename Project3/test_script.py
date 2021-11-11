@@ -1,6 +1,7 @@
 import numpy as np
 from sklearn.datasets import make_moons
 import neural_network as nn
+import matplotlib.pyplot as plt
 
 # Generate a dataset and plot it
 np.random.seed(0)
@@ -29,5 +30,5 @@ for i, nn_hdim in enumerate(hidden_layer_dimensions):
     plt.subplot(5, 2, i+1)
     plt.title('HiddenLayerSize%d' % nn_hdim)
     model = nn.build_model(X, y, nn_hdim)
-    plot_decision_boundary(lambda x: predict(model, x), X, y)
+    plot_decision_boundary(lambda x: nn.predict(model, x), X, y)
 plt.show()
