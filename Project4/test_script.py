@@ -1,4 +1,4 @@
-import pca
+import pca as pca
 import numpy as np
 
 #test PCA
