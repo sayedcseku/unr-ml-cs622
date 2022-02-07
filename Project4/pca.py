@@ -17,7 +17,7 @@ def compute_Z(X, centering=True, scaling=False):
     return Z
 
 def compute_covariance_matrix(Z):
-    cov_Z = np.dot(Z.T,Z)
+    cov_Z = np.dot(Z,Z.T)
     return cov_Z
 
 def find_pcs(COV):
@@ -27,9 +27,9 @@ def find_pcs(COV):
 
 def project_data(Z, PCS, L, k, var):
     if k>0:
-        project_mat = PCS[:,:k]
+        project_mat = PCS.T[:,:k]
     elif var>0:
-        project_mat = PCS[:,:k]
+        project_mat = PCS.T[:,:k]
     
-    Z_star = np.dot(project_mat.T,Z.T).T
+    Z_star = np.dot(project_mat.T,Z).T
     return Z_star    
